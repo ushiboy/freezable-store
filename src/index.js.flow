@@ -1,0 +1,11 @@
+// @flow
+declare module '@ushiboy/freezable-store' {
+  declare export type Store<T> = {
+    state: T;
+    assign(...sources: any): void;
+    observe(o: (state: T) => void): void;
+    unobserve(o: (state: T) => void): void;
+  };
+
+  declare export default function createFreezableStore<T>(initState: T): Store<T>;
+}
